@@ -1,0 +1,9 @@
+== 0.2.0 / 2008-06-06
+* 1 major enhancement
+  * Moved from inheritance and ostruct limitation to inclusion
+
+== 0.1.0 / 2004-02-01
+
+* 1 major enhancement
+  * Created
+  
