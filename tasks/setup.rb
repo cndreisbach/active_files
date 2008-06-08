@@ -17,8 +17,7 @@ PROJ = OpenStruct.new(
   :authors => nil,
   :email => nil,
   :url => "\000",
-  :version => ENV['VERSION'] || '0.0.0',
-  :exclude => %w(tmp$ bak$ ~$ CVS .svn/ ^pkg/),
+  :exclude => %w(tmp$ bak$ ~$ CVS .git/ .svn/ ^pkg/),
   :release_name => ENV['RELEASE'],
 
   # System Defaults
@@ -26,24 +25,7 @@ PROJ = OpenStruct.new(
   :libs => [],
   :history_file => 'History.txt',
   :manifest_file => 'Manifest.txt',
-  :readme_file => 'README.markdown',
-
-  # Announce
-  :ann => OpenStruct.new(
-    :file => 'announcement.txt',
-    :text => nil,
-    :paragraphs => [],
-    :email => {
-      :from     => nil,
-      :to       => %w(ruby-talk@ruby-lang.org),
-      :server   => 'localhost',
-      :port     => 25,
-      :domain   => ENV['HOSTNAME'],
-      :acct     => nil,
-      :passwd   => nil,
-      :authtype => :plain
-    }
-  ),
+  :readme_file => 'README.rdoc',
 
   # Gem Packaging
   :gem => OpenStruct.new(
@@ -84,21 +66,6 @@ PROJ = OpenStruct.new(
   # Rubyforge
   :rubyforge => OpenStruct.new(
     :name => "\000"
-  ),
-
-  # Rspec
-  :spec => OpenStruct.new(
-    :files => FileList['spec/**/*_spec.rb'],
-    :opts => []
-  ),
-
-  # Subversion Repository
-  :svn => OpenStruct.new(
-    :root => nil,
-    :path => '',
-    :trunk => 'trunk',
-    :tags => 'tags',
-    :branches => 'branches'
   ),
 
   # Test::Unit

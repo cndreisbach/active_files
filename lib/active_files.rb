@@ -14,7 +14,9 @@ unless defined? ActiveFiles
     PATH = ::File.dirname(LIBPATH) + ::File::SEPARATOR
     # :startdoc:
 
-    extend LibHelper
+    def self.version
+      VERSION
+    end
 
     @@base_dir = nil
     @@ext = '.yaml'
@@ -48,7 +50,7 @@ unless defined? ActiveFiles
     
   end  # module ActiveFiles
 
-  ActiveFiles.require_all_libs_relative_to __FILE__
+  LibHelper.require_all_libs_relative_to __FILE__
 
 end  # unless defined?
 

@@ -14,3 +14,7 @@ PROJ.authors = 'Clinton R. Nixon'
 PROJ.email = 'clinton.nixon@viget.com'
 PROJ.url = 'http://github.com/crnixon/active_files'
 PROJ.rubyforge.name = 'active_files'
+
+PROJ.version = ActiveFiles.version
+
+PROJ.gem_dependencies = []

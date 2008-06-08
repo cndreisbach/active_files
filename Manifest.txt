@@ -1,11 +1,11 @@
+.gitignore
 History.txt
 Manifest.txt
-README.markdown
+README.rdoc
 Rakefile
 lib/active_files.rb
 lib/active_files/record.rb
 lib/lib_helper.rb
-tasks/ann.rake
 tasks/bones.rake
 tasks/gem.rake
 tasks/manifest.rake
@@ -16,3 +16,4 @@ tasks/rubyforge.rake
 tasks/setup.rb
 tasks/test.rake
 test/test_active_files.rb
+test/test_helper.rb

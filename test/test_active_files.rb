@@ -1,9 +1,4 @@
-require File.dirname(__FILE__) + '/../lib/active_files'
-require 'test/unit'
-
-require 'rubygems'
-require 'spect'
-require 'shoulda'
+require File.join(File.dirname(__FILE__), 'test_helper')
 
 class Person < Hash
   include ActiveFiles::Record
