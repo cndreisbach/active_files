@@ -1,23 +1,25 @@
-active_files
-  by Clinton R. Nixon
-  http://github.com/crnixon/active_files
+= ActiveFiles
 
-== DESCRIPTION:
+by Clinton R. Nixon
+
+URL: http://github.com/crnixon/active_files
+
+== Description
 
 This library attempts to implement an ActiveRecord-like interface to
 a directory structure of flat files containing serialized objects,
 probably in YAML.
 
-== FEATURES/PROBLEMS:
+== Features/problems
 
 * Serializes any object
 * No validations yet
 
-== REQUIREMENTS:
+== Requirements
 
 To run tests, you need the spect and Shoulda gems.
 
-== SYNOPIS:
+== Synopsis
 
     ActiveFiles.base_dir = '/tmp/af'
 
@@ -60,7 +62,7 @@ To run tests, you need the spect and Shoulda gems.
     herbs = Person.find("herb*")
     herbs = Person.find(:all, "herb*")
 
-== LICENSE:
+== License
 
 (ISC License)
 
