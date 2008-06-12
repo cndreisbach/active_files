@@ -48,6 +48,7 @@ module ActiveFiles::Record
     # * <tt>:name => name</tt>:: Glob-based record name.
     def find(*args)
       name = '*'
+      order = nil
 
       if (args.length == 1 and args[0].kind_of?(String)) then
         name = args[0]
@@ -56,6 +57,7 @@ module ActiveFiles::Record
         mode = args.first
         options = extract_find_options!(args)
         name = options[:name] if options.has_key?(:name)
+        order = options[:order] if options.has_key?(:order)
       else
         raise ArgumentError, "Unknown mode: #{args.first}"
       end
@@ -78,7 +80,12 @@ module ActiveFiles::Record
         files.each do |file|
           objs.push(self.from_activefile(File.read(file), self.parse_file_id(file)))
         end
-        return objs
+
+        return case order
+               when 'asc' then objs.sort { |a,b| a.file_id <=> b.file_id }
+               when 'desc' then objs.sort { |a,b| b.file_id <=> a.file_id }
+               else objs
+               end
       end
     rescue Errno::ENOENT
       self.create_file_store
@@ -98,7 +105,7 @@ module ActiveFiles::Record
     
     def extract_find_options!(args)
       options = args.last.is_a?(Hash) ? args.pop : {}
-      unknown_options = options.keys - [:name].flatten
+      unknown_options = options.keys - [:name, :order].flatten
       raise(ArgumentError, "Unknown key(s): #{unknown_options.join(", ")}") unless unknown_options.empty?
       options
     end
