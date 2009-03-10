@@ -22,13 +22,12 @@ PROJ.gem_dependencies = []
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
-    s.name = "active-files"
+    s.name = "active_files"
     s.summary = "A file store for arbitrary objects, all easy-peasy."
     s.email = "crnixon@gmail.com"
     s.homepage = "http://github.com/crnixon/active_files"
     s.description = "TODO"
     s.authors = ["Clinton R. Nixon"]
-    s.version = '0.1.0'
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
